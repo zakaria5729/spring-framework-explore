@@ -1,7 +1,6 @@
 package com.spring_hibernate.spring_hibernate;
 
 import com.spring_hibernate.spring_hibernate.ioc.Coach;
-
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MyApp {
@@ -21,6 +20,14 @@ public class MyApp {
         Coach basketballCoach = context.getBean("basketballCoach", Coach.class);
         System.out.println(basketballCoach.getDailyWorkOut());;
 
+        ClassPathXmlApplicationContext annotationContext = new ClassPathXmlApplicationContext("beanAnnotation-applicationContext.xml");
+        Coach tennisCoach = annotationContext.getBean("thatSillyCoach", Coach.class);
+        System.out.println("component: " + tennisCoach.getDailyWorkOut());
+
+        Coach defaultCoach = annotationContext.getBean("tennisCoachDefault", Coach.class);
+        System.out.println("default: " + defaultCoach.getDailyWorkOut());
+
+        annotationContext.close();
         context.close();
     }
 }

@@ -1,7 +1,6 @@
 package com.spring_hibernate.spring_hibernate.bean;
 
 import com.spring_hibernate.spring_hibernate.ioc.Coach;
-
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class BeanScopeDemoApp {
