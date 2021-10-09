@@ -1,4 +1,6 @@
-package com.spring_hibernate.spring_hibernate.ioc;
+package com.spring_hibernate.spring_hibernate;
+
+import com.spring_hibernate.spring_hibernate.ioc.Coach;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

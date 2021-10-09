@@ -11,21 +11,19 @@
  		class="com.spring_hibernate.spring_hibernate.ioc.TrackCoach">	 		
  	</bean>
 
-    <bean id="basketballCoach"
-        class="com.spring_hibernate.spring_hibernate.ioc.BasketBallCoach">  
-        
-        <constructor-arg ref="happyFortune"></constructor-arg>
-    </bean>
-
-    <bean id="cricketCoach"
-        class="com.spring_hibernate.spring_hibernate.di.CricketCoach">
-
-        <property name="fortuneService" ref="happyFortune"></property>
-        <!-- <property name="fortuneService2" ref="happyFortune"></property> -->
-    </bean>
-
     <bean id="happyFortune"
         class="com.spring_hibernate.spring_hibernate.di.HappyFortuneServiceImpl">
     </bean>
+
+    <bean id="protoTrackCoach" 
+        scope="prototype"
+ 		class="com.spring_hibernate.spring_hibernate.ioc.TrackCoach">	 		
+ 	</bean>
+
+     <bean id="lifeTrackCoach" 
+        init-method="doMyStatupStuff"
+        destroy-method="doMyCleanUpStuff"
+ 		class="com.spring_hibernate.spring_hibernate.ioc.TrackCoach">	 		
+ 	</bean>
 
 </beans>
